@@ -17,9 +17,13 @@ const Food = () => {
     if (!food) return;
   
     try {
-      const response = await fetch(`http://127.0.0.1:8000/check?query=${food}`, {
+      const response = await fetch(`https://hacknyu2025-check-food-gemini.vercel.app/check?query=${food}`, {
         method: "GET",
       });
+
+      // const response = await fetch(`http://127.0.0.1:8000/check?query=${food}`, {
+      //   method: "GET",
+      // });
   
       if (!response.ok) {
         throw new Error("Failed to fetch data from API");
